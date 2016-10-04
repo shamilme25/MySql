@@ -1,0 +1,13 @@
+create table tbl_course_department(Pk_course_dept int,fk_course_id int,fk_department_id int);
+
+
+delimiter $$
+CREATE PROCEDURE pro_tbl_course_department(IN pcourse int,IN fcourse int,IN fdeptid int)
+BEGIN
+INSERT INTO  tbl_course_department(Pk_course_dept,fk_course_id,fk_department_id) values(pcourse,fcourse,fdeptid);
+END $$
+
+delimiter ;
+
+Call pro_tbl_course_department(1,1,1);
+Call pro_tbl_course_department(2,2,2);

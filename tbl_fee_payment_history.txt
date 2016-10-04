@@ -1,0 +1,17 @@
+create table tbl_fee_payment_history(fph_id int,fk_student_id int,fph_amount int,fph_date date);
+
+
+delimiter $$
+create procedure pro_tbl_fee_payment_history(IN fid int,IN fstudid int,IN famount int,IN fdate date)
+BEGIN
+insert into tbl_fee_payment_history(fph_id,fk_student_id,fph_amount,fph_date) values(fid,fstudid,famount,fdate);
+END $$
+
+delimiter ;
+
+Call pro_tbl_fee_payment_history(1,1,100000,'2013-12-11');
+Call pro_tbl_fee_payment_history(2,2,500000,'2013-11-11');
+Call pro_tbl_fee_payment_history(3,1,500000,'2013-12-16');
+Call pro_tbl_fee_payment_history(4,3,500000,'2013-10-19');
+Call pro_tbl_fee_payment_history(5,4,600000,'2013-10-21');
+

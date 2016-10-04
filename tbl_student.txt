@@ -1,0 +1,18 @@
+create table tbl_teachers1(pk_teacher_id int,fk_user_id int,teacher_name varchar(20),fk_dept_id int,teacher_dob date,teacher_place varchar(20),teacher_head_id int,teacher_active varchar(20));
+
+delimiter $$
+create procedure pro_tbl_teachers1(IN tid int,IN usid VARCHAR(20),IN tname VARCHAR(20),IN deptid INT,IN tdob DATE,IN tplace VARCHAR(20),IN theadid VARCHAR(20),IN tactive VARCHAR(20))
+BEGIN
+INSERT INTO tbl_teachers1(pk_teacher_id,fk_user_id,teacher_name,fk_dept_id,teacher_dob,teacher_place,teacher_head_id,teacher_active)
+VALUES(tid,usid,tname,deptid,tdob,tplace,theadid,tactive);
+END $$
+
+delimiter ;
+
+Delimiter ;
+
+Call pro_tbl_teachers1(1,'2','Teena',1,'1982-01-10','Calicut','NULL','ACTIVE');
+Call pro_tbl_teachers1(2,'NULL','Lawrence',1,'1979-09-01','Calicut','1','ACTIVE');
+Call pro_tbl_teachers1(3,'NULL','Mathew',1,'1981-10-13','Calicut','1','ACTIVE');
+Call pro_tbl_teachers1(4,'NULL','Lal',1,'1980-11-12','Cochin','1','ACTIVE');
+

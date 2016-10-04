@@ -1,0 +1,13 @@
+create table tbl_course(course_id int,course_description varchar(20),course_fee int,course_status varchar(20));
+
+
+Delimiter $$
+Create procedure pro_tbl_course(IN cid int,IN cdesc varchar(20),IN cfee int,IN cstatus varchar(20))
+BEGIN
+INSERT INTO tbl_course(course_id,course_description,course_fee,course_status) values(cid,cdesc,cfee,cstatus);
+END $$
+
+delimiter ;
+
+Call pro_tbl_course(1,'B-tech CS',29950,'ACTIVE');
+Call pro_tbl_course(2,'B-tech EC',12950,'ACTIVE');
