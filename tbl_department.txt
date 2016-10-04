@@ -1,0 +1,14 @@
+Create table tbl_department(department_id int,department_name varchar(20),department_active varchar(20));
+
+Delimiter $$
+Create PROCEDURE insert_tbl_department(IN dept_id int,IN dept_name varchar(20),IN dept_active varchar(20))
+BEGIN
+INSERT INTO tbl_department(department_id,department_name,department_active) values(dept_id,dept_name,dept_active);
+END $$
+
+Delimiter ;
+
+
+Call insert_tbl_department(1,'Computer Science','TRUE');
+Call insert_tbl_department(2,'Electronics','FALSE');
+Call insert_tbl_department(3,'Commerce','TRUE');
