@@ -1,0 +1,15 @@
+Create database db5;
+Use db5;
+
+
+CREATE TABLE Tbl_user_role11(pk_user_id int,username varchar(20));
+
+
+Delimiter $$
+CREATE PROCEDURE InsertTabletbl_user11(IN usid int,IN usname varchar(20))
+BEGIN
+INSERT INTO Tbl_user_role11(pk_user_id,username) values(usid,usname);
+END $$
+Delimiter ;
+
+
