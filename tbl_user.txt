@@ -1,0 +1,11 @@
+create table tbl_user(pk_user_id int,username varchar(20),password varchar(20),Fk_role_id int);
+
+Delimiter $$
+Create Procedure Inserttbl_user1(IN usid int,IN usname varchar(20),IN pass varchar(20),IN roleid int)
+BEGIN
+INSERT INTO tbl_user(pk_user_id,username,password,Fk_role_id) values(usid,usname,pass,roleid);
+END $$
+Delimiter ;
+
+Call Inserttbl_user1(1,'John','Admin123',1);
+Call Inserttbl_user1(2,'alex','Alex123',2);
